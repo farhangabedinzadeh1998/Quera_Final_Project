@@ -6,43 +6,72 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body class="relative bg-gray-100">
+<body class="flex flex-row-reverse bg-gray-50 h-dvh overflow-hidden">
     <header class="xl:hidden fixed top-4 inset-x-4 bg-white rounded-md p-3">
         <div class="flex flex-row items-center place-content-around">
-            <button><img src="./scr/assets/images/header-items/menu.png" alt="menue"></button>
+            <button class="flex"><img class="" src="./scr/assets/images/header-items/menu.png" alt="menue"></button>
             <span class="text-gray-800 font-semibold text-base">کوئرا لیست</span>
             <div>
                 <!-- viod just to balance -->
             </div>
         </div>
     </header>
-    <main class="hidden">
-        <div>
+    <main class="xl:w-7/12 xl:my-10 xl:py-10 xl:mx-auto mx-4">
+        <div id="aside-head" class="flex flex-row-reverse mt-20 mb-8 mx-5 justify-end items-center space-x-3 xl:hidden">
             <!-- profile -->
-            <div id="aside-head" class="flex flex-row-reverse mt-24 mb-8 mr-4 justify-end items-center space-x-3">
-                <div class="flex flex-col gap-1.5">
-                    <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
-                    <span class="font-semibold text-sm text-gray-600">امروز، سه‌شنبه، 9 شهریور 1403</span>
-                </div>
-                <img class="rounded-full  w-1/6" src="./scr/assets/images/aside-items/profile-picture.jpg" alt="">
+            <div class="flex flex-col gap-1.5">
+                <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
+                <span class="font-semibold text-sm text-gray-600">امروز، سه‌شنبه، 9 شهریور 1403</span>
             </div>
+            <img class="rounded-full  w-1/6" src="./scr/assets/images/aside-items/profile-picture.jpg" alt="">
         </div>
-        <div class="border mx-5">
+        <div class="border mx-6 xl:hidden mb-5">
             <!-- line -->
         </div>
-        <div>
+        <div class="flex flex-col gap-4 pb-5 mx-5">
             <!-- تسک های امروز -->
-             
+             <div class="flex flex-col gap-2">
+                <span class="font-extrabold text-xl text-gray-900">تسک‌های امروز</span>
+                <div>
+                    <span class="font-extrabold text-sm text-gray-400"></span>
+                    <span class="font-extrabold text-sm text-gray-400">تسکی برای انجام دادن نیست</span>
+                </div>
+             </div>
+             <div>
+                <div>
+                    <button class="flex flex-row items-center gap-4 border-2 rounded-xl border-gray-400 border-dashed w-full py-4 pr-4 text-blue-600 transition ease-in-out duration-500 hover:border-dotted hover:bg-blue-400 hover:text-gray-50">
+                        <span class="font-semibold text-2xl pb-1">+</span>
+                        <span class="font-bold text-base ">افزودن وظیفه جدید</span>
+                    </button>
+                </div>
+             </div>
         </div>
-        <div>
+        <div class="flex flex-col items-center my-10 space-y-5">
             <!-- عکس بکگراند -->
+             <div>
+                <img src="./scr/assets/images/main-items/2143202_Artboard 1.png" alt="">
+             </div>
+             <div class="flex flex-col items-center gap-1">
+                <p class="font-extrabold text-base text-gray-600">چه کارهایی امروز برای انجام داری؟</p>
+                <p class="font-semibold text-sm text-gray-400">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</p>
+             </div>
         </div>
         <div>
             <!-- تسک های انجام شده -->
+            <div>
+                <span class="font-extrabold text-xl text-gray-900">تسک‌های امروز</span>
+                <div class="flex flex-col gap-3">
+                    <span class="font-extrabold text-sm text-gray-400"></span>
+                    <span class="font-extrabold text-sm text-gray-400">تسکی انجام نشده</span>
+                </div>
+             </div>
+             <div>
+                <form action=""></form>
+             </div>
         </div>
     </main>
-    <aside class="fixed top-4 right-4 bottom-4 w-1/6  xl:flex hidden">
-        <div class="relative xl:flex flex-col w-full h-full  bg-white rounded-2xl">
+    <aside class="my-4 mr-4 w-1/6 xl:flex hidden">
+        <div class="relative xl:flex flex-col w-full h-full  bg-white rounded-2xl shadow-md transition ease-in-out duration-700 hover:shadow-xl hover:shadow-blue-200">
             <div id="aside-head" class="xl:flex flex-row-reverse w-4/5 mt-16 mb-8 mr-3 justify-center items-center  space-x-3">
                 <div class="flex flex-col">
                     <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
