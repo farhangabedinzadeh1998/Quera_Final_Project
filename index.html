@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fa-Ir" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="relative bg-gray-100">
+    <header class="xl:hidden fixed top-4 inset-x-4 bg-white rounded-md p-3">
+        <div class="flex flex-row items-center place-content-around">
+            <button><img src="./scr/assets/images/header-items/menu.png" alt="menue"></button>
+            <span class="text-gray-800 font-semibold text-base">کوئرا لیست</span>
+            <div>
+                <!-- viod just to balance -->
+            </div>
+        </div>
+    </header>
+    <main class="hidden">
+        <div>
+            <!-- profile -->
+            <div id="aside-head" class="flex flex-row-reverse mt-24 mb-8 mr-4 justify-end items-center space-x-3">
+                <div class="flex flex-col gap-1.5">
+                    <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
+                    <span class="font-semibold text-sm text-gray-600">امروز، سه‌شنبه، 9 شهریور 1403</span>
+                </div>
+                <img class="rounded-full  w-1/6" src="./scr/assets/images/aside-items/profile-picture.jpg" alt="">
+            </div>
+        </div>
+        <div class="border mx-5">
+            <!-- line -->
+        </div>
+        <div>
+            <!-- تسک های امروز -->
+             
+        </div>
+        <div>
+            <!-- عکس بکگراند -->
+        </div>
+        <div>
+            <!-- تسک های انجام شده -->
+        </div>
+    </main>
+    <aside class="fixed top-4 right-4 bottom-4 w-1/6  xl:flex hidden">
+        <div class="relative xl:flex flex-col w-full h-full  bg-white rounded-2xl">
+            <div id="aside-head" class="xl:flex flex-row-reverse w-4/5 mt-16 mb-8 mr-3 justify-center items-center  space-x-3">
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
+                    <span class="font-semibold text-sm text-gray-600">سه‌شنبه، 10 شهریور 1403</span>
+                </div>
+                <img class="rounded-full  w-1/5" src="./scr/assets/images/aside-items/profile-picture.jpg" alt="">
+            </div>
+            <div id="aside-nav" class="xl:flex flex-col space-y-6 mt-10 mb-28">
+                <div class="px-3">
+                    <button class="bg-blue-100 items-center py-3 rounded-lg w-full">
+                        <div class="flex flex-row-reverse gap-4 justify-end pr-4">
+                            <span class="font-semibold text-sm text-blue-600">خانه</span>
+                            <img src="./scr/assets/images/aside-items/nav-bard-items/home-2.png" alt="home">
+                        </div>
+                    </button>
+                </div>
+                <div class="px-3">
+                    <button class="bg-white items-center py-3 rounded-lg w-full">
+                        <div class="flex flex-row-reverse gap-4 justify-end pr-4">
+                            <span class="font-semibold text-sm text-gray-600">تسک‌ها</span>
+                            <img src="./scr/assets/images/aside-items/nav-bard-items/task-square.png" alt="task-list">
+                        </div>
+                    </button>
+                </div>
+                <div class="px-3">
+                    <button class="bg-white items-center py-3 rounded-lg w-full">
+                        <div class="flex flex-row-reverse gap-4 justify-end pr-4">
+                            <span class="font-semibold text-sm text-gray-600">تقویم</span>
+                            <img src="./scr/assets/images/aside-items/nav-bard-items/calendar.png" alt="calender">
+                        </div>
+                    </button>
+                </div>
+                <div class="px-3">
+                    <button class="bg-white items-center py-3 rounded-lg w-full">
+                        <div class="flex flex-row-reverse gap-4 justify-end pr-4">
+                            <span class="font-semibold text-sm text-gray-600">گزارشات</span>
+                            <img src="./scr/assets/images/aside-items/nav-bard-items/arrange-square-2.png" alt="arrange">
+                        </div>
+                    </button>
+                </div>
+                <div class="px-3">
+                    <button class="bg-white items-center py-3 rounded-lg w-full">
+                        <div class="flex flex-row-reverse gap-4 justify-end pr-4">
+                            <span class="font-semibold text-sm text-gray-600">تنظیمات</span>
+                            <img src="./scr/assets/images/aside-items/nav-bard-items/setting.png" alt="settings">
+                        </div>
+                    </button>
+                </div>
+                <div class="px-3">
+                    <button class="bg-white items-center py-3 rounded-lg w-full">
+                        <div class="flex flex-row-reverse gap-4 justify-end pr-4">
+                            <span class="font-semibold text-sm text-gray-600">پشتیبانی</span>
+                            <img src="./scr/assets/images/aside-items/nav-bard-items/24-support.png" alt="24h-support">
+                        </div>
+                    </button>
+                </div>
+                <div class="px-3">
+                    <button class="bg-white items-center py-3 rounded-lg w-full">
+                        <div class="flex flex-row-reverse gap-4 justify-end pr-4">
+                            <span class="font-semibold text-sm text-gray-600">پروفایل</span>
+                            <img src="./scr/assets/images/aside-items/nav-bard-items/profile.png" alt="profile">
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div id="aside-bottom" class="xl:flex flex-col space-y-6 mt-2">  
+                <div class="flex bg-gray-100 p-1 rounded-lg w-4/5 mx-auto justify-center">
+                    <div>
+                        <button class="flex flex-row items-center gap-3 bg-white rounded-lg py-1.5 px-4 justify-center content-center">
+                            <img src="./scr/assets/images/aside-items/bottom-items/sun.png" alt="lightmode">
+                            <span class="font-semibold text-sm text-gray-600">روشن</span>
+                        </button>   
+                    </div>
+                    <div>
+                        <button class="flex flex-row items-center gap-3 bg-gray-100 rounded-lg py-1.5 px-4 justify-center content-center">
+                            <img src="./scr/assets/images/aside-items/bottom-items/moon.png" alt="darkmode">
+                            <span class="font-semibold text-sm text-gray-400">تاریک</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="border w-4/5 mx-auto border-gray-300 rounded-full">
+                </div>
+                <div class="w-4/5 mx-auto px-2">
+                    <button class="flex gap-x-6 pr-1">
+                        <img src="./scr/assets/images/aside-items/bottom-items/logout.png" alt="logout">
+                        <span class="font-semibold text-sm text-gray-600">خروج</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </aside>
+</body>
+
+</html>
