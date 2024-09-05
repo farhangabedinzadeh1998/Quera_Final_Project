@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/output.css">
     <title>Document</title>
 </head>
-<body class="flex flex-row-reverse bg-gray-50 h-dvh overflow-hidden">
+<body class="flex flex-row-reverse bg-gray-50 h-dvh overflow-hidden font-title">
     <header class="xl:hidden fixed top-4 inset-x-4 bg-white rounded-md p-3 transition duration-500 ease-out hover:shadow-lg">
         <div class="flex flex-row items-center place-content-around">
-            <button class="flex hover:scale-110 transition duration-300"><img src="./scr/assets/images/header-items/menu.png" alt="menue"></button>
+            <button class="flex hover:scale-110 transition duration-300"><img src="./src/assets/images/header-items/menu.png" alt="menue"></button>
             <span class="text-gray-800 font-semibold text-base">کوئرا لیست</span>
             <div>
                 <!-- viod just to balance -->
@@ -23,33 +23,56 @@
                 <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
                 <span class="font-semibold text-sm text-gray-600">امروز، سه‌شنبه، 9 شهریور 1403</span>
             </div>
-            <img class="rounded-full  w-1/6" src="./scr/assets/images/aside-items/profile-picture.jpg" alt="">
+            <img class="rounded-full  w-1/6" src="./src/assets/images/aside-items/profile-picture.jpg" alt="profile-picture">
         </div>
         <div class="border mx-6 xl:hidden mb-5">
             <!-- line -->
         </div>
-        <div class="flex flex-col gap-4 pb-5 xl:mx-0 mx-5">
+        <div class="flex flex-col space-y-4 pb-5 xl:mx-0 mx-5">
             <!-- تسک های امروز -->
-             <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2">
                 <span class="font-extrabold text-xl text-gray-900">تسک‌های امروز</span>
                 <div>
                     <span class="font-extrabold text-sm text-gray-400"></span>
                     <span class="font-extrabold text-sm text-gray-400">تسکی برای انجام دادن نیست</span>
                 </div>
-             </div>
-             <div>
-                <div class="border-2 rounded-xl border-gray-400 border-dashed transition duration-500 delay-200 ease-out hover:scale-105">
-                    <button class="flex flex-row items-center gap-4 rounded-xl w-full py-4 pr-4 text-blue-600 transition ease-out duration-500 hover:bg-blue-400  hover:text-gray-50">
-                        <span class="font-semibold text-2xl pb-1">+</span>
-                        <span class="font-bold text-base ">افزودن وظیفه جدید</span>
-                    </button>
+            </div>
+            <div class="border-2 rounded-xl border-gray-400 border-dashed transition duration-500 delay-200 ease-out hover:scale-105">
+                <button class="flex flex-row items-center gap-4 rounded-xl w-full py-4 pr-4 text-blue-600 transition ease-out duration-500 hover:bg-blue-400  hover:text-gray-50">
+                    <span class="font-semibold text-2xl pb-1">+</span>
+                    <span class="font-bold text-base ">افزودن وظیفه جدید</span>
+                </button>
+            </div>
+            <div>
+            <div id="addNewTask" class="flex flex-col w-full border rounded-xl border-gray-300 bg-white p-4 space-y-4">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex flex-col gap-2">
+                        <span class="font-bold text-base text-gray-500">نام تسک</span>
+                        <input type="text" name="" id="" class="font-semibold text-sm text-gray-400" placeholder="توضیحات">
+                    </div>
+                    <div>
+                        <button>تگ ها
+                            <img src="" alt="">
+                        </button>
+                    </div>
                 </div>
-             </div>
+                <div class="border border-gray-300"></div>
+                <div class="text-left pt-4 pl-2">
+                    <button class="bg-blue-400 text-white rounded-xl py-1.5  px-4 font-semibold text-sm text-white">اضافه کردن تسک</button>
+                </div>
+                <ul id="taskList">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+         </div>
         </div>
         <div class="flex flex-col items-center my-10 space-y-5">
             <!-- عکس بکگراند -->
              <div>
-                <img src="./scr/assets/images/main-items/2143202_Artboard 1.png" alt="">
+                <img src="./src/assets/images/main-items/2143202_Artboard 1.png" alt="">
              </div>
              <div class="flex flex-col items-center gap-1">
                 <p class="font-extrabold text-base text-gray-600">چه کارهایی امروز برای انجام داری؟</p>
@@ -65,9 +88,11 @@
                     <span class="font-extrabold text-sm text-gray-400">تسکی انجام نشده</span>
                 </div>
              </div>
-             <div>
-                <form action=""></form>
-             </div>
+             <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+             </ul>
         </div>
     </main>
     <aside class="my-4 mr-4 w-1/6 xl:flex hidden">
@@ -77,14 +102,14 @@
                     <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
                     <span class="font-semibold text-sm text-gray-600">سه‌شنبه، 10 شهریور 1403</span>
                 </div>
-                <img class="rounded-full  w-1/5" src="./scr/assets/images/aside-items/profile-picture.jpg" alt="">
+                <img class="rounded-full  w-2/5" src="./src/assets/images/aside-items/profile-picture.jpg" alt="">
             </div>
             <div id="aside-nav" class="xl:flex flex-col space-y-6 mt-10 mb-28">
                 <div class="px-3">
                     <button class="bg-blue-100 items-center py-3 rounded-lg w-full">
                         <div class="flex flex-row-reverse gap-4 justify-end pr-4">
                             <span class="font-semibold text-sm text-blue-600">خانه</span>
-                            <img src="./scr/assets/images/aside-items/nav-bard-items/home-2.png" alt="home">
+                            <img src="./src/assets/images/aside-items/nav-bard-items/home-2.png" alt="home">
                         </div>
                     </button>
                 </div>
@@ -92,7 +117,7 @@
                     <button class="bg-white items-center py-3 rounded-lg w-full">
                         <div class="flex flex-row-reverse gap-4 justify-end pr-4">
                             <span class="font-semibold text-sm text-gray-600">تسک‌ها</span>
-                            <img src="./scr/assets/images/aside-items/nav-bard-items/task-square.png" alt="task-list">
+                            <img src="./src/assets/images/aside-items/nav-bard-items/task-square.png" alt="task-list">
                         </div>
                     </button>
                 </div>
@@ -100,7 +125,7 @@
                     <button class="bg-white items-center py-3 rounded-lg w-full">
                         <div class="flex flex-row-reverse gap-4 justify-end pr-4">
                             <span class="font-semibold text-sm text-gray-600">تقویم</span>
-                            <img src="./scr/assets/images/aside-items/nav-bard-items/calendar.png" alt="calender">
+                            <img src="./src/assets/images/aside-items/nav-bard-items/calendar.png" alt="calender">
                         </div>
                     </button>
                 </div>
@@ -108,7 +133,7 @@
                     <button class="bg-white items-center py-3 rounded-lg w-full">
                         <div class="flex flex-row-reverse gap-4 justify-end pr-4">
                             <span class="font-semibold text-sm text-gray-600">گزارشات</span>
-                            <img src="./scr/assets/images/aside-items/nav-bard-items/arrange-square-2.png" alt="arrange">
+                            <img src="./src/assets/images/aside-items/nav-bard-items/arrange-square-2.png" alt="arrange">
                         </div>
                     </button>
                 </div>
@@ -116,7 +141,7 @@
                     <button class="bg-white items-center py-3 rounded-lg w-full">
                         <div class="flex flex-row-reverse gap-4 justify-end pr-4">
                             <span class="font-semibold text-sm text-gray-600">تنظیمات</span>
-                            <img src="./scr/assets/images/aside-items/nav-bard-items/setting.png" alt="settings">
+                            <img src="./src/assets/images/aside-items/nav-bard-items/setting.png" alt="settings">
                         </div>
                     </button>
                 </div>
@@ -124,7 +149,7 @@
                     <button class="bg-white items-center py-3 rounded-lg w-full">
                         <div class="flex flex-row-reverse gap-4 justify-end pr-4">
                             <span class="font-semibold text-sm text-gray-600">پشتیبانی</span>
-                            <img src="./scr/assets/images/aside-items/nav-bard-items/24-support.png" alt="24h-support">
+                            <img src="./src/assets/images/aside-items/nav-bard-items/24-support.png" alt="24h-support">
                         </div>
                     </button>
                 </div>
@@ -132,7 +157,7 @@
                     <button class="bg-white items-center py-3 rounded-lg w-full">
                         <div class="flex flex-row-reverse gap-4 justify-end pr-4">
                             <span class="font-semibold text-sm text-gray-600">پروفایل</span>
-                            <img src="./scr/assets/images/aside-items/nav-bard-items/profile.png" alt="profile">
+                            <img src="./src/assets/images/aside-items/nav-bard-items/profile.png" alt="profile">
                         </div>
                     </button>
                 </div>
@@ -141,13 +166,13 @@
                 <div class="flex bg-gray-100 p-1 rounded-lg w-4/5 mx-auto justify-center">
                     <div>
                         <button class="flex flex-row items-center gap-3 bg-white rounded-lg py-1.5 px-4 justify-center content-center">
-                            <img src="./scr/assets/images/aside-items/bottom-items/sun.png" alt="lightmode">
+                            <img src="./src/assets/images/aside-items/bottom-items/sun.png" alt="lightmode">
                             <span class="font-semibold text-sm text-gray-600">روشن</span>
                         </button>   
                     </div>
                     <div>
                         <button class="flex flex-row items-center gap-3 bg-gray-100 rounded-lg py-1.5 px-4 justify-center content-center">
-                            <img src="./scr/assets/images/aside-items/bottom-items/moon.png" alt="darkmode">
+                            <img src="./src/assets/images/aside-items/bottom-items/moon.png" alt="darkmode">
                             <span class="font-semibold text-sm text-gray-400">تاریک</span>
                         </button>
                     </div>
@@ -156,7 +181,7 @@
                 </div>
                 <div class="w-4/5 mx-auto px-2">
                     <button class="flex gap-x-6 pr-1">
-                        <img src="./scr/assets/images/aside-items/bottom-items/logout.png" alt="logout">
+                        <img src="./src/assets/images/aside-items/bottom-items/logout.png" alt="logout">
                         <span class="font-semibold text-sm text-gray-600">خروج</span>
                     </button>
                 </div>
