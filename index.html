@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./src/output.css">
     <title>Document</title>
 </head>
-<body class="flex flex-row-reverse bg-gray-50 h-dvh overflow-hidden font-title">
+<body class="flex flex-row-reverse bg-gray-50 font-title">
     <header class="xl:hidden fixed top-4 inset-x-4 bg-white rounded-md p-3 transition duration-500 ease-out hover:shadow-lg">
         <div class="flex flex-row items-center place-content-around">
             <button class="flex hover:scale-110 transition duration-300"><img src="./src/assets/images/header-items/menu.png" alt="menue"></button>
@@ -17,85 +17,216 @@
             </div>
         </div>
     </header>
-    <main class="xl:w-7/12 xl:my-10 xl:py-10 xl:mx-auto mx-4">
+
+    <main class="xl:w-7/12 xl:my-10 xl:py-10 xl:mx-auto mx-4 space-y-4">
+
         <div id="aside-head" class="flex flex-row-reverse mt-20 mb-8 mx-5 justify-end items-center space-x-3 xl:hidden">
             <!-- profile -->
             <div class="flex flex-col gap-1.5">
                 <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
                 <span class="font-semibold text-sm text-gray-600">امروز، سه‌شنبه، 9 شهریور 1403</span>
             </div>
-            <img class="rounded-full  w-1/6" src="./src/assets/images/aside-items/profile-picture.jpg" alt="profile-picture">
+            <img class="rounded-full w-16 h-16" src="./src/assets/images/aside-items/profile-picture.jpg" alt="profile-picture">
         </div>
+
         <div class="border mx-6 xl:hidden mb-5">
             <!-- line -->
         </div>
-        <div class="flex flex-col space-y-4 pb-5 xl:mx-0 mx-5">
-            <!-- تسک های امروز -->
-            <div class="flex flex-col gap-2">
-                <span class="font-extrabold text-xl text-gray-900 drop-shadow-sm">تسک‌های امروز</span>
-                <div>
-                    <span class="font-extrabold text-sm text-gray-400"></span>
-                    <span class="font-extrabold text-sm text-gray-400 drop-shadow-sm">تسکی برای انجام دادن نیست</span>
-                </div>
-            </div>
 
-            <div class="border-2 rounded-xl border-gray-400 border-dashed transition duration-500 delay-200 ease-out hover:scale-105 drop-shadow-md">
-                <button class="flex flex-row items-center gap-4 rounded-xl w-full py-4 pr-4 text-blue-600 transition ease-out duration-500 hover:bg-blue-400  hover:text-gray-50">
-                    <span class="font-semibold text-2xl pb-1">+</span>
-                    <span class="font-bold text-base ">افزودن وظیفه جدید</span>
-                </button>
-            </div>
+        <div class="flex flex-col gap-2">
 
-            <div id="addNewTask" class="hidden w-full border rounded-xl border-gray-200 bg-white p-4 space-y-4 shadow-md">
+            <span class="font-extrabold text-xl text-gray-900 drop-shadow-sm">تسک‌های امروز</span>
+
+            <span id="task-counter" class="font-extrabold text-sm text-gray-400 drop-shadow-sm">تسکی برای انجام دادن وجود ندارد</span>
+            
+        </div>
+
+        <button id="add-todos" class="flex flex-row border-gray-400 border-dashed border-2 items-center gap-4 rounded-xl w-full py-4 pr-4 text-blue-600 transition ease-out duration-500 hover:bg-blue-400 hover:scale-105 hover:text-gray-50">
+            <span class="font-semibold text-2xl pb-1">+</span>
+            <span class="font-bold text-base">افزودن وظیفه جدید</span>
+        </button>
+
+        <div id="task-container" class="space-y-4">
+
+            <!-- <div id="newtask-container" class="w-full border rounded-xl border-gray-200 bg-white p-4 space-y-4 shadow-md">
+
                 <div class="flex flex-col space-y-4">
                     <div class="flex flex-col gap-2">
-                        <input type="text" class="font-bold text-base text-gray-500" placeholder="نام تسک">
-                        <input type="text" name="" id="" class="font-semibold text-sm text-gray-400 truncate" placeholder="توضیحات">
+    
+                        <input type="text" id="title-${index}" class="font-bold text-base text-gray-500" placeholder="نام تسک" value="">
+                    
+                        <textarea id="description-${index}" class="font-semibold text-sm text-gray-400 truncate" placeholder="توضیحات"></textarea>
+    
                     </div>
+    
                     <div>
-                        <button class="flex flex-row-reverse space-x-2 font-bold text-base border rounded-lg items-center justify-center px-3 py-2 text-gray-400">
+                        <button id="drop-down" class="flex flex-row-reverse space-x-2 font-bold text-base border rounded-lg items-center justify-center px-3 py-2 text-gray-400">
                             <span class="pt-0.5">تگ ها</span>
                             <img class="" src="./src/assets/images/main-items/add-new/tag-right.png" alt="tag">
                         </button>
                     </div>
-                    <div class="hidden flex-row w-1/4 gap-3 px-4 py-3 justify-center content-center rounded-xl bg-white shadow-md border">
-                        <span class="font-semibold text-sm py-0.5 px-2 rounded-sm text-green-500 bg-green-100 ">پایین</span>
-                        <div class="border-l rounded-full"></div>
-                        <span class="font-semibold text-sm py-0.5 px-2 rounded-sm text-orange-300 bg-yellow-100">متوسط</span>
-                        <div class="border-l rounded-full"></div>
-                        <span class="font-semibold text-sm py-0.5 px-2 rounded-sm text-red-400 bg-red-200">بالا</span>
-                    </div>
+    
+                    
+
+                    <ul class="flex flex-row border py-3 px-5 rounded-lg gap-2 w-1/4 justify-center">
+                        <li class="transition duration-300 ease-out hover:scale-105 hover:bg-red-400 hover:text-gray-100 font-semibold text-md py-0.5 px-3 rounded-lg text-red-400 bg-red-200">بالا</li>
+                        <li class="transition duration-300 ease-out hover:scale-105 hover:bg-yellow-400 hover:text-gray-100 font-semibold text-md py-0.5 px-3 rounded-lg text-orange-300 bg-yellow-100">متوسط</li>
+                        <li class="transition duration-300 ease-out hover:scale-105 hover:bg-green-300 hover:text-gray-100 font-semibold text-md py-0.5 px-3 rounded-lg text-green-500 bg-green-100 ">پایین</li>
+                    </ul>
+    
                 </div>
+    
                 <div class="border border-gray-300"></div>
+    
                 <div class="text-left pt-4 pl-2">
-                    <button class="bg-blue-400 rounded-xl py-1.5  px-4 font-semibold text-sm text-white">اضافه کردن تسک</button>
+                    <button class="add-btn bg-blue-400 rounded-xl py-1.5  px-4 font-semibold text-sm text-white">اضافه کردن تسک</button>
+                </div>
+    
+            </div> -->
+    
+        
+        </div>
+
+        <!-- <div class="flex relative bg-white border py-5 rounded-xl shadow-md">
+            <div class="border-4 rounded-l ml-4"></div>
+            <div class="flex gap-4 items-center">
+                <input type="checkbox" class="complete-checkbox border rounded-xl border-gray-300 w-6 h-6 mt-2">
+                <div class="flex flex-col gap-1">
+                    <span class="font-bold text-xl text-black">تسک تسک تسک</span>
+                    <span class="font-semibold text-sm text-gray-500">توضیحات توضیحات</span>
+                </div>
+            </div>
+        
+            <img class="dot-menu absolute top-5 cursor-pointer p-3 pl-1 left-5 items-start mr-auto" src="./src/assets/images/main-items/task/Frame 1000005552.png" alt="delete-edit-menu">
+            <div class="absolute hidden top-6 left-10 flex gap-2 border border-gray-300 rounded-lg bg-white p-1">
+                    <img class="cursor-pointer " src="./src/assets/images/main-items/task/tabler_edit.png" alt="edit">
+                    <img class="cursor-pointer " src="./src/assets/images/main-items/task/tabler_trash-x.png" alt="delete">
+            </div>
+            
+            
+        </div> -->
+
+        <div id="background-picture" class="flex flex-col items-center my-10 space-y-5">
+            <!-- عکس بکگراند -->
+            <div>
+                <img src="./src/assets/images/main-items/2143202_Artboard 1.png" alt="background image" class="w-full h-auto">
+            </div>
+            <div class="flex flex-col items-center gap-1">
+                <p class="font-extrabold text-base text-gray-600">چه کارهایی امروز برای انجام داری؟</p>
+                <p class="font-semibold text-sm text-gray-400">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-2 mt-">
+
+            <span class="font-extrabold text-xl text-gray-900 drop-shadow-sm">تسک‌های انجام شده</span>
+
+            <span id="complete-counter" class="font-extrabold text-sm text-gray-400 drop-shadow-sm">تسکی انجام داده نشده</span>
+            
+        </div>
+
+        <div id="completed-container" class="space-y-4">
+            <!-- <div class="flex flex-row bg-white border py-5 rounded-xl shadow-md">
+                <div class="border-4 rounded-l ml-4"></div>
+                <div class="flex gap-4 items-center">
+                    <input type="checkbox" checked class="border rounded-xl border-gray-300 w-6 h-6 mt-2">
+                    <span class="font-bold text-xl text-black line-through">تسک تسک تسک</span>
+                </div>
+            </div> -->
+        </div>
+
+    </main>
+
+    <!-- <main class="xl:w-7/12 xl:my-10 xl:py-10 xl:mx-auto mx-4 space-y-4">
+
+        <div id="aside-head" class="flex flex-row-reverse mt-20 mb-8 mx-5 justify-end items-center space-x-3 xl:hidden">
+      
+            <div class="flex flex-col gap-1.5">
+                <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
+                <span class="font-semibold text-sm text-gray-600">امروز، سه‌شنبه، 9 شهریور 1403</span>
+            </div>
+            <img class="rounded-full  w-1/6" src="./src/assets/images/aside-items/profile-picture.jpg" alt="profile-picture">
+        </div>
+
+        <div class="border mx-6 xl:hidden mb-5">
+            line
+        </div>
+
+        <div class="flex flex-col gap-2">
+            <span class="font-extrabold text-xl text-gray-900 drop-shadow-sm">تسک‌های امروز</span>
+            <div>
+                        <span class="font-extrabold text-sm text-gray-400"></span>
+                        <span class="font-extrabold text-sm text-gray-400 drop-shadow-sm">تسکی برای انجام دادن نیست</span>
+            </div>
+        </div>
+
+        <button id="add-todos" class="flex flex-row border-gray-400 border-dashed border-2 items-center gap-4 rounded-xl w-full py-4 pr-4 text-blue-600 transition ease-out duration-500 hover:bg-blue-400  hover:text-gray-50">
+            <span class="font-semibold text-2xl pb-1">+</span>
+            <span class="font-bold text-base ">افزودن وظیفه جدید</span>
+        </button>
+
+        <div id="newtask-container" class=" w-full border rounded-xl border-gray-200 bg-white p-4 space-y-4 shadow-md">
+            <div class="flex flex-col space-y-4">
+                <div class="flex flex-col gap-2">
+
+                    <input type="text" id="title-${index}" class="font-bold text-base text-gray-500" placeholder="نام تسک" value="">
+                
+                    <textarea id="description-${index}" class="font-semibold text-sm text-gray-400 truncate" placeholder="توضیحات"></textarea>
+
+                </div>
+
+                <div>
+                    <button class="flex flex-row-reverse space-x-2 font-bold text-base border rounded-lg items-center justify-center px-3 py-2 text-gray-400">
+                        <span class="pt-0.5">تگ ها</span>
+                        <img class="" src="./src/assets/images/main-items/add-new/tag-right.png" alt="tag">
+                    </button>
+                </div>
+
+                <div class="flex flex-row w-1/5 gap-3 px-4 py-3 justify-center content-center rounded-xl bg-white shadow-md border">
+                    <button class="font-semibold text-sm py-0.5 px-2 rounded-sm text-green-500 bg-green-100 ">پایین</button>
+                    <div class="border-l rounded-full"></div>
+                    <button class="font-semibold text-sm py-0.5 px-2 rounded-sm text-orange-300 bg-yellow-100">متوسط</button>
+                    <div class="border-l rounded-full"></div>
+                    <button class="font-semibold text-sm py-0.5 px-2 rounded-sm text-red-400 bg-red-200">بالا</button>
                 </div>
 
             </div>
 
-            <div id="taskList">
-                <ul>
-                    <li class="hidden bg-white border py-5 rounded-xl shadow-md ">
-                        <div class="border-4 rounded-l ml-4">
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="border rounded-md border-gray-300 w-6 h-6">
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <div>
-                                    <span class="font-bold text-xl text-black">تسک تسک تسک</span>
-                                </div>
-                                <span class="font-semibold text-sm text-gray-500">توضیحات توضیحات</span>
-                            </div>
-                        </div>
-                        <div></div>                   
-                    </li>
-                </ul>
+            <div class="border border-gray-300"></div>
+
+            <div class="text-left pt-4 pl-2">
+                <button class="add-btn bg-blue-400 rounded-xl py-1.5  px-4 font-semibold text-sm text-white">اضافه کردن تسک</button>
             </div>
 
         </div>
+
+        <div class="flex bg-white border py-5 rounded-xl shadow-md ">
+
+            <div class="border-4 rounded-l ml-4">
+            </div>
+
+            <div class="flex gap-4 content-between">
+
+                <input type="checkbox" class="border rounded-xl border-gray-300 w-6 h-6 mt-2">
+
+                <div class="flex flex-col gap-1">
+
+                    <span class="font-bold text-xl text-black">تسک تسک تسک</span>
+                    
+                    <span class="font-semibold text-sm text-gray-500">توضیحات توضیحات</span>
+
+                </div>
+            </div>
+
+            <div class="flex gap-2 justify-start ml-5 mr-auto">
+                <button>delete</button>
+                <button>edit</button>
+            </div>                   
+
+        </div>
+
         <div class="flex flex-col items-center my-10 space-y-5">
-            <!-- عکس بکگراند -->
+            عکس بکگراند
              <div>
                 <img src="./src/assets/images/main-items/2143202_Artboard 1.png" alt="">
              </div>
@@ -104,24 +235,25 @@
                 <p class="font-semibold text-sm text-gray-400">میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!</p>
              </div>
         </div>
-        <div class="flex flex-col xl:mx-0 mx-5 pt-4">
-            <!-- تسک های انجام شده -->
-            <div>
-                <span class="font-extrabold text-xl text-gray-900">تسک‌های امروز</span>
-                <div class="flex flex-col gap-3">
-                    <span class="font-extrabold text-sm text-gray-400"></span>
-                    <span class="font-extrabold text-sm text-gray-400">تسکی انجام نشده</span>
-                </div>
-             </div>
-             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-             </ul>
+
+        <div class="flex flex-row bg-white border py-5 rounded-xl shadow-md">
+         
+            <div class="border-4 rounded-l ml-4">
+            </div>
+
+            <div class="flex gap-4 items-center">
+                <input type="checkbox" checked class="border rounded-xl border-gray-300 w-6 h-6 mt-2">
+
+                <span class="font-bold text-xl text-black line-through">تسک تسک تسک  </span>
+            </div>
+
         </div>
-    </main>
-    <aside class="my-4 mr-4 w-1/6 xl:flex hidden">
-        <div class="relative xl:flex flex-col w-full h-full  bg-white rounded-2xl shadow-md transition ease-in-out duration-700 hover:shadow-xl hover:shadow-blue-200">
+
+    </main> -->
+    <aside class="my-4 mr-4 w-1/6 h-dvh xl:flex hidden">
+
+        <div class="relative h-auto overflow-hidden xl:flex flex-col w-full  bg-white rounded-2xl shadow-md transition ease-in-out duration-700 hover:shadow-xl hover:shadow-blue-200">
+
             <div id="aside-head" class="xl:flex flex-row-reverse w-4/5 mt-16 mb-8 mr-3 justify-center items-center  space-x-3">
                 <div class="flex flex-col">
                     <span class="font-extrabold text-lg text-black">سلام، فرهنگ</span>
@@ -129,6 +261,7 @@
                 </div>
                 <img class="rounded-full  w-2/5" src="./src/assets/images/aside-items/profile-picture.jpg" alt="">
             </div>
+
             <div id="aside-nav" class="xl:flex flex-col space-y-6 mt-10 mb-28">
                 <div class="px-3">
                     <button class="bg-blue-100 items-center py-3 rounded-lg w-full">
@@ -187,16 +320,17 @@
                     </button>
                 </div>
             </div>
-            <div id="aside-bottom" class="xl:flex flex-col space-y-6 mt-2">  
+
+            <div id="aside-bottom" class="absolute bottom-10 xl:flex flex-col space-y-6 w-full">  
                 <div class="flex bg-gray-100 p-1 rounded-lg w-4/5 mx-auto justify-center">
                     <div>
-                        <button class="flex flex-row items-center gap-3 bg-white rounded-lg py-1.5 px-4 justify-center content-center">
+                        <button class="light-mode-btn flex flex-row items-center gap-3 bg-white rounded-lg py-1.5 px-4 justify-center content-center">
                             <img src="./src/assets/images/aside-items/bottom-items/sun.png" alt="lightmode">
                             <span class="font-semibold text-sm text-gray-600">روشن</span>
                         </button>   
                     </div>
                     <div>
-                        <button class="flex flex-row items-center gap-3 bg-gray-100 rounded-lg py-1.5 px-4 justify-center content-center">
+                        <button class="dark-mode-btn flex flex-row items-center gap-3 bg-gray-100 rounded-lg py-1.5 px-4 justify-center content-center">
                             <img src="./src/assets/images/aside-items/bottom-items/moon.png" alt="darkmode">
                             <span class="font-semibold text-sm text-gray-400">تاریک</span>
                         </button>
@@ -211,8 +345,12 @@
                     </button>
                 </div>
             </div>
+
         </div>
+
     </aside>
+
+    <script src="/src/js/actions.js"></script>
 </body>
 
 </html>
