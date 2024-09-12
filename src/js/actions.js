@@ -1,6 +1,6 @@
 
 
-// ------------------------------------------------------------------------------
+// --------------------------------"Quera Main Projects-----------------------------------------
 
 let todos = [];
 let completedTodos = [];
@@ -32,11 +32,7 @@ const addTodos = () => {
     renderTodos();
 };
 
-// وقتی روی دکمه کلیک شود :
 document.getElementById("add-todos").addEventListener("click", addTodos);
-
-
-
 
 const updateTodo = (index) => {
     let counter = 0
@@ -61,7 +57,7 @@ const editTodo = (index) => {
 
     countTodos();
     renderTodos();
-    // saveTodos();
+    saveTodos();
 };
 
 const deleteTodo = (index) => {
@@ -113,12 +109,9 @@ const renderTodos = () => {
     let completeCounter = document.getElementById("complete-counter");
     const completedContainer = document.getElementById("completed-container");
     const bgPicture = document.getElementById("background-picture");
-
-    // تسکی برای انجام دادن نیست
    
     completedTodos.length !== 0 ? completeCounter.innerHTML = completedTodos.length + 'تسک انجام شده است ' : true;
 
-    
     todos.length === 0 
     ? bgPicture.classList.add("hidden")
     : bgPicture.classList.remove("hidden");
@@ -134,7 +127,6 @@ const renderTodos = () => {
         const div = document.createElement("div");
         if (todo.editing) {
             div.className = "addTask w-full border rounded-xl border-gray-200 bg-white dark:bg-blue-800 dark:border-blue-950 p-4 space-y-4 shadow-md"
-            // دکمه اولویت ها اصلاح شود
             div.innerHTML = `
             <div class="flex flex-col space-y-4">
                     <div class="flex flex-col gap-2">
@@ -195,17 +187,8 @@ const renderTodos = () => {
 
             div.querySelector(".complete-checkbox").addEventListener("click", () => toggleComplete(index));
         
-
-            // div.querySelector(".doted-menu").addEventListener("click", () => {
-            // document.getElementById("delete-edit").classList.toggle("hidden")
-            // document.getElementById("delete-edit").classList.toggle("flex")
-            // })
-
-        
-
             div.querySelector(".edit-btn").addEventListener("click", () => editTodo(index));
             div .querySelector(".delete-btn") .addEventListener("click", () => deleteTodo(index));
-
 
         };
 
@@ -225,8 +208,6 @@ const renderTodos = () => {
 
         div.querySelector(".restore-checkbox").addEventListener("click", () => restoreTodo(index));
         
-
-
         completedContainer.appendChild(div);
     });
 };
@@ -234,3 +215,6 @@ const renderTodos = () => {
 
 
 window.onload = loadTodos;
+
+
+// ------------------------------------------Thanks---------------------------------------------
